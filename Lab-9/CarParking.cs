@@ -12,9 +12,7 @@ public class CarParking
         {
             if (value < 0)
                 throw new Exception("Количество мест не может быть меньше 0.");
-            else
-                numSlots = value;
-
+            numSlots = value;
         }
     }   
     public int NumCars
@@ -24,8 +22,7 @@ public class CarParking
         {
             if (value > NumSlots)
                 throw new Exception("Количество занятых мест не может быть меньше 0 и превышать количество мест.");
-            else
-                numCars = value;
+            numCars = value;
 
         }
     }

@@ -12,3 +12,4 @@ C:\Users\superBuldozer\Documents\GitHub\Lab-9\Lab-9\obj\Debug\net9.0\refint\Lab-
 C:\Users\superBuldozer\Documents\GitHub\Lab-9\Lab-9\obj\Debug\net9.0\Lab-9.pdb
 C:\Users\superBuldozer\Documents\GitHub\Lab-9\Lab-9\obj\Debug\net9.0\Lab-9.genruntimeconfig.cache
 C:\Users\superBuldozer\Documents\GitHub\Lab-9\Lab-9\obj\Debug\net9.0\ref\Lab-9.dll
+C:\Users\superBuldozer\Documents\GitHub\Lab-9\Lab-9\obj\Debug\net9.0\Lab-9.sourcelink.json
