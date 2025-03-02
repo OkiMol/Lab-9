@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab_9
+﻿namespace Lab_9
 {
     public class CarParkingArray
     {
@@ -25,17 +19,29 @@ namespace Lab_9
         {
             if (length < 0)
                 throw new Exception("Длина массива не может быть меньше 0.");
+
             carParkingArray = new CarParking[length];
-            var randomSlots = random.Next(0, 100);
+            var randomSlots = random.Next(1, 101);
             int randomCars;
-            do
-            {
-                randomCars = random.Next(0, 100);
-            } while (randomCars <= randomSlots);
+
             for (int i = 0; i < length; i++)
+            {
+                randomCars = random.Next(0, randomSlots + 1);
                 carParkingArray[i] = new CarParking(randomSlots, randomCars);
+            }
             count++;
         }
+        
+        public CarParkingArray(CarParkingArray other)
+        {
+            carParkingArray = new CarParking[other.Length];
+            for (int i = 0; i < other.Length; i++)
+            {
+                carParkingArray[i] = new CarParking(other[i].NumSlots, other[i].NumCars);
+            }
+            count++;
+        }
+        
         public static int GetCount
         {
             get => count;
@@ -47,7 +53,7 @@ namespace Lab_9
                 carParkingArray[i].Show();
         }
         
-        public CarParking this[int index] 
+        public CarParking this[int index]
         {
             get
             {
@@ -59,8 +65,14 @@ namespace Lab_9
             {
                 if (index >= 0 && index < carParkingArray.Length)
                     carParkingArray[index] = value;
-                throw new Exception("Выход за границы массива");
+                else
+                    throw new Exception("Выход за границы массива");
             }
+        }
+        
+        public IEnumerator<CarParking> GetEnumerator()
+        {
+            return ((IEnumerable<CarParking>)carParkingArray).GetEnumerator();
         }
     }
 }

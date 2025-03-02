@@ -5,6 +5,11 @@ public class CarParking
     static int count;
     int numSlots;
     int numCars;
+    
+    public static int GetCount
+    {
+        get => count;
+    }
     public int NumSlots
     {
         get => numSlots;
@@ -36,28 +41,33 @@ public class CarParking
     {
         NumSlots = numSlots;
         NumCars = numCars;
+        count++;
     }
 
     public void Show()
     {
         Console.WriteLine($"numSlots = {numSlots}\nnumCars = {numCars}");
     }
-    public double CalculateParkingCongestion()
-    {
-        return Math.Round((double)NumCars / NumSlots * 100, 2);
-    }
+
     public static double CalculateParkingCongestion(CarParking parking)
     {
         return Math.Round((double)parking.NumCars / parking.NumSlots * 100, 2);
     }
+
+    public double CalculateParkingCongestion()
+    {
+        return Math.Round((double)numCars / numSlots * 100, 2);
+    }
+
     public static CarParking operator ++ (CarParking parking)
     {
         parking.NumCars++;
         return parking;
     }
+
     public static CarParking operator -- (CarParking parking)
     {
-        parking.NumCars++;
+        parking.NumCars--;
         return parking;
     }
     public static CarParking operator + (CarParking parking1, CarParking parking2) 
